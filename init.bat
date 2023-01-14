@@ -14,10 +14,10 @@ setlocal EnableDelayedExpansion
 if not exist "C:/Users/%USERNAME%/aem" mkdir "C:/Users/%USERNAME%/aem"
 if not exist "%cwd%\aem\modules" mkdir "%cwd%\aem\modules"
 if not exist "%cwd%\aem\templates" mkdir "%cwd%\aem\templates"
-xcopy /s /i "%cwd%\templates\*.*"  "%cwd%\aem\templates"
-xcopy /s /i "%cwd%\modules\*.*"  "%cwd%\aem\modules"
-xcopy /s "%cwd%\to_user_folder.bat"  "%cwd%\aem\to_user_folder.bat"
-xcopy /s /i "%cwd%\aem\*.*"  "C:/Users/%USERNAME%/aem"
+xcopy /s /i /Y "%cwd%\templates\*.*"  "%cwd%\aem\templates"
+xcopy /s /i /Y "%cwd%\modules\*.*"  "%cwd%\aem\modules"
+xcopy /s /Y "%cwd%\to_user_folder.bat"  "%cwd%\aem\to_user_folder.bat"
+xcopy /s /i /Y "%cwd%\aem\*.*"  "C:/Users/%USERNAME%/aem"
 ::setx path "%UserPath%;C:/Users/%USERNAME%/aem"
 endlocal
 :EndBatch
