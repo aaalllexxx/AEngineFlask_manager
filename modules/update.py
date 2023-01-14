@@ -15,4 +15,4 @@ def main(base_dir, args):
     else:
         os.chdir(aem)
         subprocess.call("git pull")
-    os.system(os.path.join(aem, "init.bat"))
+    os.system(os.path.join(aem, "update.bat"))
