@@ -1,6 +1,7 @@
 @echo off
 rmdir /s /q "C:/Users/%USERNAME%/aem/modules" > nul
 rmdir /s /q "C:/Users/%USERNAME%/aem/templates" > nul
+cd C:/Users/%USERNAME%/aem/temp/AEngineFlask_Manager
 set cwd=%cd%
 if not exist "%cwd%\aem\modules" mkdir "C:\Users\%USERNAME%\aem\modules"
 if not exist "%cwd%\aem\templates" mkdir "C:\Users\%USERNAME%\aem\templates"
