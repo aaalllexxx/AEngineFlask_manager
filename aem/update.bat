@@ -1,5 +1,8 @@
 @echo off
 rmdir /s /q "C:/Users/%USERNAME%/aem/modules"
 rmdir /s /q "C:/Users/%USERNAME%/aem/templates"
-call "init.bat"
-cls
+set cwd=%cd%
+if not exist "%cwd%\aem\modules" mkdir "C:\Users\%USERNAME%\aem\modules"
+if not exist "%cwd%\aem\templates" mkdir "C:\Users\%USERNAME%\aem\templates"
+xcopy /s /i /Y "%cwd%\templates\*.*"  "C:\Users\%USERNAME%\aem\templates"
+xcopy /s /i /Y "%cwd%\modules\*.*"  "C:\Users\%USERNAME%\aem\modules"

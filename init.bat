@@ -16,7 +16,6 @@ if not exist "%cwd%\aem\modules" mkdir "%cwd%\aem\modules"
 if not exist "%cwd%\aem\templates" mkdir "%cwd%\aem\templates"
 xcopy /s /i /Y "%cwd%\templates\*.*"  "%cwd%\aem\templates"
 xcopy /s /i /Y "%cwd%\modules\*.*"  "%cwd%\aem\modules"
-xcopy /s /Y "%cwd%\to_user_folder.bat"  "%cwd%\aem\to_user_folder.bat"
 xcopy /s /i /Y "%cwd%\aem\*.*"  "C:/Users/%USERNAME%/aem"
 aem.exe 2> NUL
 set erlev=%ERRORLEVEL%
