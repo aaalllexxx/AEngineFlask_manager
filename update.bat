@@ -1,2 +1,2 @@
 @echo off
-xcopy /s /i /Y /C "%cd%\aem"  "C:/Users/%USERNAME%"
+xcopy /s /i /Y /C "%cd%\aem"  "C:/Users/%USERNAME%/aem"
