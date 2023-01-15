@@ -20,6 +20,6 @@ xcopy /s /Y "%cwd%\to_user_folder.bat"  "%cwd%\aem\to_user_folder.bat"
 xcopy /s /i /Y "%cwd%\aem\*.*"  "C:/Users/%USERNAME%/aem"
 aem.exe 2> NUL
 set erlev=%ERRORLEVEL%
-if %erlev%==9009setx path "%UserPath%;C:/Users/%USERNAME%/aem"
+if %erlev%==9009 setx path "%UserPath%;C:/Users/%USERNAME%/aem"
 endlocal
 :EndBatch
