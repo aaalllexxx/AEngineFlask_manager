@@ -16,9 +16,7 @@ def main(base_dir, _):
                 js = json.loads(file.read())
                 print(f"Didn't find run configuration.\nRunning {js['project_name']} application.")
         project_folder = js["project_folder"]
-        print(project_folder)
         project_name = js["project_name"]
-        print(project_name)
         if platform.system().lower() == "windows":
             command = f"python \"{os.path.join(project_folder, project_name)}\\main.py\""
             try:
