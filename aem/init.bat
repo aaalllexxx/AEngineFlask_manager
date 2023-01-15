@@ -14,11 +14,17 @@ setlocal EnableDelayedExpansion
 if not exist "C:/Users/%USERNAME%/aem" mkdir "C:/Users/%USERNAME%/aem"
 if not exist "%cwd%\aem\modules" mkdir "%cwd%\aem\modules"
 if not exist "%cwd%\aem\templates" mkdir "%cwd%\aem\templates"
+echo adding templates...
 xcopy /s /i /Y "%cwd%\templates\*.*"  "%cwd%\aem\templates" > nul
+echo adding modules...
 xcopy /s /i /Y "%cwd%\modules\*.*"  "%cwd%\aem\modules" > nul
+echo cloning aem...
 xcopy /s /i /Y "%cwd%\aem\*.*"  "C:/Users/%USERNAME%/aem" > nul
-aem.exe > nul
-set erlev=%ERRORLEVEL%
-if %erlev%==9009 setx path "%UserPath%;C:/Users/%USERNAME%/aem" > nul
+aem.exe
+if %ERRORLEVEL%==9009 (
+    echo adding to PATH...
+    setx path "%UserPath%;C:/Users/%USERNAME%/aem" > nul
+)
+RefreshEnv
 endlocal
 :EndBatch
