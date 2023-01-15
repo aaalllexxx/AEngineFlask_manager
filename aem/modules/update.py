@@ -3,7 +3,7 @@ import os
 import subprocess
 
 
-def main(base_dir, args):
+def main(*_):
     base = f"C:/Users/{getpass.getuser()}/aem"
     if not os.path.exists(os.path.join(base, "temp")):
         os.mkdir(os.path.join(base, "temp"))

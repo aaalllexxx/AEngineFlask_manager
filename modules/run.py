@@ -4,7 +4,7 @@ import platform
 import subprocess
 
 
-def main(base_dir, args):
+def main(base_dir, _):
     try:
         if os.path.exists("aem_run.json"):
             with open("aem_run.json") as file:
