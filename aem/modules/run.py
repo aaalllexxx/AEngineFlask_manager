@@ -9,7 +9,7 @@ def main(base_dir, _):
         if os.path.exists("aem_run.json"):
             with open("aem_run.json") as file:
                 js = json.loads(file.read())
-                print(f"Найдены конфигурации.\nЗапуск приложения '{js['project_name']}'.")
+                print(f"Конфигурации найдены.\nЗапуск приложения '{js['project_name']}'.")
 
         else:
             with open(base_dir + "/env.json") as file:
