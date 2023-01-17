@@ -6,7 +6,18 @@ import sys
 
 
 def copy_and_overwrite(src, dst):
-    shutil.copytree(src, dst, dirs_exist_ok=True)
+    for file in os.listdir(src):
+        name = os.path.join(src, file)
+        if os.path.isfile(name):
+            try:
+                shutil.copy(name, dst)
+            except OSError as e:
+                print(e)
+        else:
+            try:
+                shutil.copytree(name, dst)
+            except OSError as e:
+                print(e)
 
 
 def main(*_):
