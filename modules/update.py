@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import sys
 
+
 def copy_and_overwrite(from_path, to_path):
     if os.path.exists(to_path):
         shutil.rmtree(to_path)
@@ -38,5 +39,5 @@ def main(*_):
         else:
             os.chdir(aem)
             subprocess.call("git pull")
-        copy_and_overwrite(f"{os.getcwd()}", f"C:/Users/{getpass.getuser()}")
+        copy_and_overwrite(aem, f"C:/Users/{getpass.getuser()}")
         print("full update done.")
