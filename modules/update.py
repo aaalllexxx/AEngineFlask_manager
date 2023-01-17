@@ -39,6 +39,6 @@ def main(*_):
         else:
             os.chdir(aem)
             subprocess.call("git pull")
-            print(getpass.getuser())
+        print(os.getcwd())
         copy_and_overwrite(f"{os.getcwd()}", f"C:/Users/{getpass.getuser()}")
         print("full update done.")
