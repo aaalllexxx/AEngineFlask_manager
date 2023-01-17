@@ -11,11 +11,13 @@ def copy_and_overwrite(src, dst):
         if os.path.isfile(name):
             try:
                 shutil.copy(name, dst)
+                print(f"succesfully copied {file}")
             except OSError as e:
                 print(e)
         else:
             try:
                 shutil.copytree(name, dst)
+                print(f"succesfully copied {file}")
             except OSError as e:
                 print(e)
 
