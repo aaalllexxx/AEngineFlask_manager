@@ -54,3 +54,4 @@ def main(*_):
         os.system(os.path.join(aem, "update.bat"))
         copy_and_overwrite(f"{os.getcwd()}", f"C:/Users/{getpass.getuser()}/aem")
         print("full update done.")
+    shutil.rmtree(aem, ignore_errors=True, onerror=None)
