@@ -2,7 +2,7 @@ import getpass
 import os
 import shutil
 import subprocess
-
+import sys
 
 def copy_and_overwrite(from_path, to_path):
     if os.path.exists(to_path):
