@@ -18,7 +18,10 @@ def main(base_dir, _):
         project_folder = js["project_folder"]
         project_name = js["project_name"]
         if platform.system().lower() == "windows":
-            command = f"python \"{os.path.join(project_folder, project_name)}\\main.py\""
+            if not os.path.exists("venv"):
+                command = f"python \"{os.path.join(project_folder, project_name)}\\main.py\""
+            else:
+                command = f"venv/Scripts/python \"{os.path.join(project_folder, project_name)}\\main.py\""
             try:
                 subprocess.call(command)
             except OSError as e:
