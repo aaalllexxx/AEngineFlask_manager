@@ -10,8 +10,8 @@ def copy_and_overwrite(from_path, to_path):
     shutil.copytree(from_path, to_path)
 
 
-def main(_, args):
-    if not ("--full" in args):
+def main(*_):
+    if not ("--full" in sys.argv):
         base = f"C:/Users/{getpass.getuser()}/aem"
         if not os.path.exists(os.path.join(base, "temp")):
             os.mkdir(os.path.join(base, "temp"))
