@@ -21,7 +21,7 @@ def main(base_dir, _):
             if not os.path.exists("venv"):
                 command = f"python \"{os.path.join(project_folder, project_name)}\\main.py\""
             else:
-                command = f"venv/Scripts/python \"{os.path.join(project_folder, project_name)}\\main.py\""
+                command = f"./venv/Scripts/python \"{os.path.join(project_folder, project_name)}\\main.py\""
             try:
                 subprocess.call(command)
             except OSError as e:
