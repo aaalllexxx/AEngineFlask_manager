@@ -53,3 +53,10 @@ def main(*_):
         os.system(os.path.join(aem, "update.bat"))
         copy_and_overwrite(f"{os.getcwd()}", f"C:/Users/{getpass.getuser()}/aem")
         print("full update done.")
+    os.chdir(temp)
+    os.system("Del /s /q AEngineFlask_manager")
+    os.system("rmdir /s /q AEngineFlask_manager")
+    if not os.path.exists("AEngineFlask_manager"):
+        print("Папка temp очищена")
+        return
+    print(f"Папка temp не очищена. Очистите её по пути {temp}")
