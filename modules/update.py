@@ -51,5 +51,6 @@ def main(*_):
             os.chdir(aem)
             subprocess.call("git pull")
         print(os.getcwd())
+        os.system(os.path.join(aem, "update.bat"))
         copy_and_overwrite(f"{os.getcwd()}", f"C:/Users/{getpass.getuser()}/aem")
         print("full update done.")
