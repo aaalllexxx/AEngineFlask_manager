@@ -9,4 +9,4 @@ def main(*_):
     os.system("cd venv/Scripts/")
     subprocess.call("./activate")
     os.system(f"pip install -r C:/Users/{getpass.getuser()}/aem/req.txt")
-    print("ready")
+    print("Ready. Type 'venv/Scripts/activate' to activate virtual environment")
