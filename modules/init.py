@@ -31,7 +31,10 @@ def main(base_dir, args):
         shutil.copy(base_dir + "/templates/init/main.py", f'{args["-n"]}')
         print(f"adding index template...")
         shutil.copy(base_dir + "/templates/init/templates/index.html", f'{args["-n"]}/templates')
+        print("adding configure script")
+        shutil.copy(base_dir + "/templates/init/configure.bat", f'{args["-n"]}')
         print(f"adding run configurations...")
+
         with open(base_dir + "/env.json", encoding="utf-8") as file:
             with open(f"{args['-n']}/aem_run.json", "w") as file1:
                 file1.write(file.read())
